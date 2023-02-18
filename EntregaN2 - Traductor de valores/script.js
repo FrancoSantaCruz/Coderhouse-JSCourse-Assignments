@@ -51,39 +51,67 @@ const num_bases = [
 Main();
 
 function Main() {
+    let flag = true;
+    do {
+        let value = prompt("Ingresar un valor entre 1 y 999 a traducir: ");
+        if (value === NaN || value < 1 || value > 999) {
+            alert("Valor inválido. El valor debe encontrarse entre 1 y 999.\n Presione Ok para continuar.");
+        } else {
+            /* 
+             * calcUnidades: 
+             * Recibe el valor como parámetro, y devuelve un array con el número particionado en unidades.
+             * ej. value=361. calc_unidades returns [300, 60, 1]
+            */
+            let arrValores = calcUnidades(value);
 
-    let value = prompt("Ingresar un valor entre 1 y 999 a traducir: ");
-    /* 
-     * calc_unidades: 
-     * Recibe el valor como parámetro, y devuelve un array con el número particionado en unidades.
-     * ej. value=361. calc_unidades returns [300, 60, 1]
-    */
-    let arr_valores = calc_unidades(value);
-    /*
-     * check_values:
-     * recibe el array de valores como parametro, devuelve el array modificado para los numeros entre 1 y 29 
-     * los cuales son no combinables con los demás números.
-    */
-    let update_valores = check_values(arr_valores);
+            /*
+             * checkValues:
+             * recibe el array de valores como parametro, devuelve el array modificado para los numeros entre 1 y 29 
+             * los cuales son no combinables con los demás números.
+            */
+            let updateValores = checkValues(arrValores);
 
-    /* 
-     * translate:
-     * recibe el array de valores como parámetro, y devuelve el array con los valores de las keys de la lista.
-     * ej. 52 -> Cincuenta y dos.
-    */
-    let arr_str = translate(update_valores);
+            /* 
+             * translate:
+             * recibe el array de valores como parámetro, y devuelve el array con los valores de las keys de la lista.
+             * ej. 52 -> Cincuenta y dos.
+            */
+            let arrStr = translate(updateValores);
 
-    /* 
-     * clear_response:
-     * recibe el array de strings como parámetro, y devuelve un string con correcciones gramaticales.
-    */
-    let respuesta = clear_response(arr_str);
+            /* 
+             * clearResponse:
+             * recibe el array de strings como parámetro, y devuelve un string con correcciones gramaticales.
+            */
+            let respuesta = clearResponse(arrStr);
+            alert(respuesta);
+        }
+        do {
+            flag = finalizar();
+            if (flag.length > 5) {
+                alert(flag);
+            }
+        } while (flag.length > 5)
 
-    alert(respuesta);
+    } while (flag)
+
 }
 
+function finalizar() {
+    let flagAux = prompt("¿Desea consultar por otro número?\nResponder Si o No.")
+    switch (flagAux.toLowerCase()) {
+        case "si":
+            return true;
+            break;
+        case "no":
+            return false;
+            break;
+        default:
+            return "Respuesta inválida. Ingrese Si o No. \n Presione Ok para volver a intentar.";
+            break;
+    }
+}
 
-function calc_unidades(val) {
+function calcUnidades(val) {
     let arr_divido = [];
     let len = val.length + 1; /* Se le agrega 1 porque necesito contrarestar la sustraccion de la primera vuelta */
     for (let i = 0; i < val.length; i++) {
@@ -96,7 +124,7 @@ function calc_unidades(val) {
     return arr_divido;
 }
 
-function check_values(arr_val) {
+function checkValues(arr_val) {
     switch (arr_val.length) {
         case 2:
             if (arr_val[0] >= 10 && arr_val[0] < 30) {
@@ -139,11 +167,8 @@ function translate(val) {
         })
     });
 
-    console.log(val)
-    console.log(val.length);
 
     if (val.length >= 2) {
-        console.log("entre primero")
         if (val[1] >= "1" && val[1] < "30") {
             return sentence;
         } else {
@@ -156,13 +181,13 @@ function translate(val) {
             return sentence;
         }
     } else {
-        if(sentence[0] === "Ciento"){
+        if (sentence[0] === "Ciento") {
             sentence.splice(0, 1, "Cien");
         }
         return sentence;
     }
 }
 
-function clear_response(arr_str) {
+function clearResponse(arr_str) {
     return arr_str.toString().toLowerCase().split(',').join(' ');
 }
