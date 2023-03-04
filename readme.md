@@ -9,8 +9,9 @@
 
 ## Indice:
 
-    - Entrega N° 1 - Simulador Interactivo: Simulador de Cajero automatico.
-    - Entrega N° 2 - Simulador Interactivo: Traductor de valores enteros.
+    - Entrega N° 1 - Simulador Interactivo: Simulador extracción de dinero
+    - Entrega N° 2 - Simulador Interactivo: Traductor de valores
+    - Entrega N° 2 - Simulador Interactivo: Simulador Cajero Automático (Proyecto Final)
 
 ## Integrantes del proyecto
 

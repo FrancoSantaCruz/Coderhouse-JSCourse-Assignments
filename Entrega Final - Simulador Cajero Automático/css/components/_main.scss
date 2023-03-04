@@ -1,0 +1,159 @@
+.ATM__container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr 2fr 3fr 2fr 3fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 0.5fr 3fr 0.5fr;
+    background: linear-gradient(0.25turn, rgb(90, 90, 90), #ebf8e1, rgb(90, 90, 90));
+
+    & .screen__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr;
+        border: 1px solid black;
+        background-color: rgb(227, 227, 227);
+        grid-column: 2/5;
+        grid-row: 2/5;
+
+        & .banner__container {
+            display: flex;
+            grid-row: 1/2;
+            grid-column: 1/3;
+            height: 100%;
+            width: auto;
+            justify-content: center;
+            background-color: rgb(176, 36, 68);
+
+            & .logo {
+                width: 30%;
+            }
+
+            & .banco__name {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        & .btn__container {
+            grid-row: 3/4;
+            grid-column: 1/3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & input {
+                background-color: rgb(176, 36, 68);
+                color: white;
+                align-content: center;
+                width: 4rem;
+                height: 1.2rem;
+                font-size: 0.8rem;
+                margin-right: 1rem;
+            }
+
+            & button {
+                background-color: rgb(176, 36, 68);
+                color: white;
+                align-content: center;
+                width: 4rem;
+                height: 1.2rem;
+                font-size: 0.8rem;
+                margin-left: 1rem;
+            }
+        }
+
+        & .registerForm {
+            grid-column: 1/3;
+            grid-row: 3/5;
+            justify-self: center;
+            & input,
+            button {
+                display: flex;
+                flex-direction: column;
+                margin: 0.5rem;
+                text-align: center;
+                align-items: center;
+                padding: 0.3rem;
+            }
+        }
+
+        & .text {
+            text-align: center;
+            justify-content: center;
+            padding: 1rem;
+
+            &.__primerPag {
+                grid-row: 2/3;
+                grid-column: 1/3;
+            }
+
+            &.__tercerPag {
+                grid-row: 1/2;
+                grid-column: 1/3;
+            }
+        }
+
+        & #userForm {
+            display: none;
+        }
+
+        & #tercerPag {
+            display: none;
+            grid-column: 1/3;
+            grid-row: 2/5;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+        }
+
+        & #cuartaPag {
+            display: none;
+            grid-column: 1/3;
+            grid-row: 2/5;
+            grid-template-rows: 3fr 1fr;
+        }
+
+        & #quintaPag {
+            display: none;
+            grid-column: 1/3;
+            grid-row: 2/5;
+            grid-template-rows: 3fr 1fr;
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    & .keyboard__container {
+        border: 1px solid black;
+        background-color: silver;
+        grid-column: 3/4;
+        grid-row: 6/7;
+    }
+
+    & .card__container {
+        border: 1px solid black;
+        background-color: silver;
+        grid-column: 5/6;
+        grid-row: 3/4;
+    }
+
+    & .moneyDispenser__container {
+        border: 1px solid black;
+        background-color: silver;
+        grid-column: 5/6;
+        grid-row: 6/7;
+    }
+}

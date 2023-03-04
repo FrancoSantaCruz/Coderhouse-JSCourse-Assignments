@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Cajero Automático | Banelco</title>
+</head>
+
+<body>
+    <main>
+        <div class="ATM__container">
+            <section class="screen__container">
+                <div class="banner__container">
+                    <img src="./img/banelcoLogo.png" alt="banelco logo" class="logo">
+                </div>
+                <!-- Primer Página -->
+                <div id="text __primerPag" class="text __primerPag">
+                    <p>Bienvenido!</p>
+                    <p>¿Ya tienes una cuenta con datos ingresados? </p>
+                </div>
+                <div class="btn__container" id="btn__container">
+                    <form id="btn __si">
+                        <input type="submit" value="Si"></input>
+                    </form>
+                    <button type="submit" id="btn __no">No</button>
+                </div>
+                <!-- Segunda Página -->
+                <form id="userForm" class="registerForm">
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Saldo">
+                    <button type="submit">Registrar</button>
+                </form>
+                <!-- Tercer Página -->
+                <div class="tercerPag __container" id="tercerPag">
+                    <div id="text __tercerPag" class="text __tercerPag">
+                        <p>Bienvenido NOMBRE DEL USUARIO</p>
+                    </div>
+                    <div class="operaciones __container" id="agregar">
+                        <button type="submit" id="__agregarbtn" value="1">Depositar saldo</button>
+                    </div>
+                    <div class="operaciones __container" id="consultar">
+                        <button type="submit" id="__consultarbtn">Consultar saldo</button>
+                    </div>
+                    <div class="operaciones __container" id="retirar">
+                        <button type="submit" id="__retirarbtn">Retirar un monto</button>
+                    </div>
+                    <div class="operaciones __container" id="salir">
+                        <form action="">
+                            <button type="submit" id="__salirbtn">Salir</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Cuarta Página -->
+
+                <div class="cuartaPag __container" id="cuartaPag">
+                    <div id="text __cuartaPag" class="text __cuartaPag">
+                        <p>MENSAJE PARA EL USUARIO RESPECTO A LA OPERACION</p>
+                    </div>
+                    <form action="" class="__form" id="operacionForm">
+                        <input type="text" name="agregarRetirar" id="agregarRetirar">
+                        <button type="submit">Confirmar</button>
+                    </form>
+                </div>
+
+                <!-- Quinta Página (resultados) -->
+                <div class="quintaPag __container" id="quintaPag">
+                    <div id="text __quintaPag" class="text __quintaPag">
+                        <p>MENSAJE PARA EL USUARIO RESPECTO A LA OPERACION</p>
+                    </div>
+                    <form action="" class="__form" id="salidaForm">
+                        <input type="button" value="Si" name="reiniciar" id="btn __reiniciar">
+                        <button type="submit" id="btn __salir">Salir</button>
+                    </form>
+                </div>
+            </section>
+            <section class="keyboard__container">
+                <h1>keyboard</h1>
+            </section>
+            <section class="card__container">
+                <h1>card</h1>
+            </section>
+            <section class="moneyDispenser__container">
+                <h1>moneyDispenser</h1>
+            </section>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>
